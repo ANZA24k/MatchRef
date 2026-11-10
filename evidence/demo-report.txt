@@ -1,0 +1,7 @@
+MatchRef fictional tournament fixture
+Match: night-circuit-042
+Official match server log, exported by the tournament organizer.
+Team A led 6-4 at 18:31:00 UTC.
+At 18:31:04 UTC the tournament server logged SERVER_CRASH.
+A referee confirmed that both teams disconnected because the server process stopped.
+The bracket initially recorded a 6-4 win for Team A.
