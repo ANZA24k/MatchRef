@@ -1,0 +1,13 @@
+{
+  "name": "matchref",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite web",
+    "build": "vite build web --outDir ../dist --emptyOutDir",
+    "test": "python -m unittest discover -s tests && node --test tests/*.test.mjs"
+  },
+  "dependencies": { "genlayer-js": "1.1.8" },
+  "devDependencies": { "vite": "7.2.2" }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MatchRef gives esports tournaments a public record of match disputes and GenLayer recommendations.">
+  <title>MatchRef | Tournament Review Desk</title>
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="bar"><a class="brand" href="./"><span>MR</span> MatchRef</a><div class="network"><i></i> GENLAYER STUDIONET</div><button id="wallet" type="button">Connect wallet</button></header>
+<main>
+  <section class="hero"><div class="eyebrow">TOURNAMENT INTEGRITY / REVIEW DESK</div>
+    <h1>Every match.<br><em>On the record.</em></h1>
+    <p>Lock the rules and match report before a dispute. GenLayer validators recommend an outcome. Tournament organizers record the final call.</p>
+    <a href="#desk" class="primary jump">Open review desk ↘</a>
+    <div class="hero-index" aria-hidden="true">01<br><span>REVIEW<br>PROTOCOL</span></div>
+  </section>
+  <div class="steps"><span><b>01</b> Lock match rules</span><span><b>02</b> File and respond</span><span><b>03</b> Validator review</span><span><b>04</b> Organizer decision</span></div>
+  <section id="desk">
+    <div class="eyebrow">CASE WORKSPACE</div><h2>Review desk</h2>
+    <p>Read a case by ID or prepare a contract action. Use Studio’s built-in account to sign in Studio, or connect an injected wallet on Studionet.</p>
+    <div class="grid">
+      <article><h3>Look up a case</h3>
+        <form id="lookup">
+          <label>Studionet contract address<input id="address" required pattern="0x[0-9a-fA-F]{40}" placeholder="0x…" spellcheck="false"></label>
+          <label>Match ID<input id="match-id" required pattern="[A-Za-z0-9_\-]{1,48}" placeholder="night-circuit-042"></label>
+          <button class="primary">Read finalized case</button>
+        </form>
+        <p id="read-status" role="status"></p><div id="case"></div>
+      </article>
+      <article><h3>Prepare an action</h3>
+        <form id="action">
+          <label>Contract action<select id="method"></select></label>
+          <div id="fields"></div>
+          <div class="actions"><button type="button" id="studio">Prepare Studio call</button><button class="primary" id="sign">Sign with wallet</button></div>
+        </form>
+        <p id="handoff" hidden></p>
+        <form id="track"><label>Transaction hash<input id="hash" required pattern="0x[0-9a-fA-F]{64}" placeholder="Paste a Studio or wallet transaction hash"></label><button>Track finality</button></form>
+        <p id="tx-status" role="status"></p>
+      </article>
+    </div>
+  </section>
+</main>
+<footer><span>MatchRef / Tournament Integrity</span><a href="https://github.com/ANZA24k/MatchRef">Source & setup ↗</a></footer>
+</body>
+</html>
