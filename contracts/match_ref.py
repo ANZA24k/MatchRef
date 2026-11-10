@@ -135,7 +135,7 @@ class MatchRef(gl.Contract):
         def evaluate():
             try:
                 fetched = gl.nondet.web.get(url)
-                if fetched.status_code != 200 or len(fetched.body) != size or digest(fetched.body) != sha:
+                if fetched.status != 200 or fetched.body is None or len(fetched.body) != size or digest(fetched.body) != sha:
                     return "REPORT_UNVERIFIED"
                 report = fetched.body.decode("utf-8")
             except Exception:
