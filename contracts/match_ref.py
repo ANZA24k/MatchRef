@@ -1,5 +1,6 @@
 # { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }
 from genlayer import *
+from datetime import datetime, timezone
 import hashlib
 import json
 import re
@@ -40,7 +41,7 @@ class MatchRef(gl.Contract):
         pass
 
     def _time(self) -> int:
-        return int(gl.message.datetime.timestamp())
+        return int(datetime.now(timezone.utc).timestamp())
 
     def _case(self, match_id: str):
         if match_id not in self.cases:
